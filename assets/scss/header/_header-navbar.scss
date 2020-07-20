@@ -1,0 +1,133 @@
+.header-navbar
+{
+    position: relative;
+
+    display: grid;
+
+    letter-spacing: .1em;
+
+    align-items: center;
+    justify-items: end;
+
+    &__list
+    {
+        @include unlist(0 (-$gap) 0 0);
+        @include md-min
+        {
+            display: grid;
+
+            width: 100%;
+
+            justify-content: flex-end;
+            grid-template-columns: repeat(auto-fit, minmax(50px, max-content));
+        }
+        @include md
+        {
+            position: absolute;
+            top: 100%;
+            right: $gap;
+
+            display: none;
+
+            text-align: right;
+
+            background-color: rgba($color-gray-dark, .9);
+        }
+    }
+
+    &__btn
+    {
+        position: relative;
+
+        width: 30px;
+        height: 23px;
+        margin: $gap 0;
+
+        cursor: pointer;
+        transition: .5s ease-in-out;
+        transform: rotate(0deg);
+
+        @include md-min
+        {
+            display: none;
+        }
+        @include md
+        {
+            display: block;
+        }
+
+        &-row
+        {
+            position: absolute;
+            left: 0;
+
+            display: block;
+
+            width: 100%;
+            height: 3px;
+
+            transition: .25s ease-in-out;
+            transform: rotate(0deg);
+
+            opacity: 1;
+            border-radius: 3px;
+            background: $color-light;
+
+            &:nth-of-type(1)
+            {
+                top: 0;
+            }
+
+            &:nth-of-type(2)
+            {
+                top: 9px;
+            }
+
+            &:nth-of-type(3)
+            {
+                top: 18px;
+            }
+        }
+
+        &--active span
+        {
+            &:nth-of-type(1)
+            {
+                top: 9px;
+
+                transform: rotate(135deg);
+            }
+
+            &:nth-of-type(2)
+            {
+                left: -30px;
+
+                opacity: 0;
+            }
+
+            &:nth-of-type(3)
+            {
+                top: 9px;
+
+                transform: rotate(-135deg);
+            }
+        }
+    }
+
+    &__link
+    {
+        font-size: 1.125rem;
+
+        display: block;
+
+        padding: $gap;
+
+        transition: color .5s;
+
+        &:hover,
+        &:focus
+        {
+            color: $color-accent;
+        }
+    }
+}
