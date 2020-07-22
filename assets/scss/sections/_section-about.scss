@@ -1,0 +1,41 @@
+.about {
+
+   
+    background-color: $color-gray-light;
+    letter-spacing: 0.055em;
+    @extend %section;
+    
+    h2 {
+        margin-top: 0;
+    }
+
+    &__container {
+        display: grid;
+        @extend %container;
+
+        @include lg-min {
+            grid-gap: $gap * 5;
+            grid-template-columns: 1fr 271px;
+
+            p {
+                font-size: 1.125rem;
+            }
+        }
+
+        p:first-child {
+            position: relative;
+            margin-top: -5px;
+        }
+    }
+
+    &__content {
+        p:last-of-type {
+            margin: 0;
+        }
+        @include lg-min {
+            p {
+                font-size: 1.125rem;
+            }
+        }
+    }
+}
