@@ -29,13 +29,39 @@
     }
 
     &__content {
-        p:last-of-type {
-            margin: 0;
+        p {
+            &:first-of-type {
+                position: relative;
+                margin-top: -5px;
+            &::after {
+                position: absolute;
+                top: 0;
+                width: 2px;
+                height: 200px;
+                content: "";
+                background-color: rgba($color-gray, 0.1);
+                
+                @include lg-min {
+                    right: -50px;
+                }
+            }
         }
+                &:last-of-type {
+                    margin: 0;
+                }
+       
+        }
+        
         @include lg-min {
             p {
                 font-size: 1.125rem;
             }
         }
+    }
+
+    &__img {
+        display: grid;
+        align-content: center;
+        justify-items: center;
     }
 }
