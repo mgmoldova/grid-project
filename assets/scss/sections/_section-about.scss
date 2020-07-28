@@ -22,6 +22,22 @@
             }
         }
 
+        @include lg-md {   
+            grid-gap: $gap * 2;
+            grid-template-columns: 1fr 271px;
+
+        }
+
+        @include md-sm {
+            grid-gap: 20px;
+            grid-template-columns: 1fr 236px;
+        }
+
+        @include sm-min {
+            grid-gap: 20px;
+            grid-template-columns: 1fr;
+        }
+
         p:first-child {
             position: relative;
             margin-top: -5px;
@@ -44,6 +60,14 @@
                 @include lg-min {
                     right: -50px;
                 }
+
+                @include lg-md {
+                    right: -20px;
+                }
+
+                @include md-sm {
+                    right: -10px;
+                }
             }
         }
                 &:last-of-type {
@@ -57,11 +81,18 @@
                 font-size: 1.125rem;
             }
         }
+
+
     }
 
     &__img {
         display: grid;
         align-content: center;
         justify-items: center;
+        
+        img {
+            max-width: 100%;
+            max-height: 480px;
+        }
     }
 }
