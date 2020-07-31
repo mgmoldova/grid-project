@@ -33,12 +33,12 @@
         }
         @include md-sm
         {
-            grid-gap: 20px;
+            grid-gap: $gap;
             grid-template-columns: 1fr 236px;
         }
-        @include sm-min
+        @include sm
         {
-            grid-gap: 20px;
+            grid-gap: $gap;
             grid-template-columns: 1fr;
         }
 

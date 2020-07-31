@@ -2,16 +2,23 @@
 {
     padding: 30px 0;
 
-    background-color: $color_primary;
+    background-color: $color-primary;
 
     .btn-accent
     {
         width: 100%;
 
-        color: #fff;
+        color: #ffffff;
         border-color: rgba(255, 255, 255, 0);
         border-bottom-color: rgba(255, 255, 255, .2);
         background-color: rgba(255, 255, 255, .1);
+
+        &:hover,
+        &:focus {
+            cursor: pointer;
+            border-color: #ffffff;
+            background-color: $color-accent;
+        }
     }
 
     &__container
@@ -50,10 +57,20 @@
             transition: background-color .5s, border-color .5s;
             letter-spacing: .15em;
 
-            color: #fff;
+            color: #ffffff;
             border: 2px solid rgba(255, 255, 255, 0);
             border-bottom-color: rgba(255, 255, 255, .25);
             background-color: rgba(255, 255, 255, .05);
+
+            &::placeholder {
+                color: $color-gray;
+            }
+            &:hover,
+            &:focus {
+                border-color: rgba(255, 255, 255, 0.15);
+                border-bottom-color: #ffffff;
+                background-color: rgba(255, 255, 255, 0.15);
+            }
         }
 
         &:nth-of-type(1)
